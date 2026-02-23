@@ -69,5 +69,6 @@ public class Caja implements Serializable {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Set<Terminal> terminales = new HashSet<>();
+
     
 }

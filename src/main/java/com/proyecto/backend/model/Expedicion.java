@@ -91,10 +91,10 @@ public class Expedicion implements Serializable {
     @JsonIgnoreProperties("expediciones") // Bloquea bucle infinito de relaciones
     private Usuario usuario;
     
-    // @Schema(description = "cajas en una expedicion", example = "120 kg")
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "caja_id", nullable = false) 
-    // private Caja caja;
+    @Schema(description = "cajas en una expedicion", example = "120 kg")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "caja_id", nullable = false) 
+    private Caja caja;
 
 
        
