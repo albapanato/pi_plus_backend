@@ -99,8 +99,8 @@ public class Terminal implements Serializable {
     @JsonIgnoreProperties("terminales_pago")
     private Caja caja;
 
-    @OneToMany(mappedBy = "caja", cascade = CascadeType.ALL)
-    private Set<Expedicion> expediciones = new HashSet<>();
+    // @OneToMany(mappedBy = "terminal", cascade = CascadeType.ALL)
+    // private Set<Expedicion> expediciones = new HashSet<>();
        
     
     

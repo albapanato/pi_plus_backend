@@ -31,7 +31,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     // Obtener datos (find y count)
     // **********************************************************
 
-    // Consulta con DQM @Query(value = "SELECT * FROM usuarios", nativeQuery = true)
+    //Consulta con DQM 
+    @Query(value = "SELECT * FROM usuarios", nativeQuery = true)
     List<Usuario> findSqlAll();
     
     // Consulta con SQL mapeado

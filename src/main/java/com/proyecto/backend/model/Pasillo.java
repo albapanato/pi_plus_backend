@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
 
@@ -34,7 +35,7 @@ public class Pasillo {
     private int id;
     
     @Schema(description = "Numero pasillo", example = "2")
-    @NotBlank(message = "El numero del pasillo es obligatorio")
+    @Min(1)
     @Column(name = "numero_pasillo", nullable = false, unique = false) 
     private Integer numeroPasillo;
     
