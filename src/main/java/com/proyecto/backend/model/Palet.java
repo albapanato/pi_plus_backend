@@ -18,5 +18,7 @@ public class Palet {
     @Column(name = "id", nullable = false, unique = true) 
     private Integer id;
 
+      //por terminar
+
     
 }
