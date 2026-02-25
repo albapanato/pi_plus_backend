@@ -60,7 +60,7 @@ public class Caja implements Serializable {
     private String modeloProducto;
 
     @Schema(description = "ID único del palé que está asignado una caja", example = "PALE-1234N")
-    @Column(name = "id_pale", nullable = true, unique = true) 
+    @Column(name = "palet_id", nullable = true, unique = true) 
     private Integer idPale;
        
     

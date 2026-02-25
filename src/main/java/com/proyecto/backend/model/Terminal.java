@@ -95,7 +95,7 @@ public class Terminal implements Serializable {
     // private Integer idCaja;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_caja") 
+    @JoinColumn(name = "caja_id") 
     @JsonIgnoreProperties("terminales_pago")
     private Caja caja;
 
