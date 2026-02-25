@@ -1,6 +1,6 @@
-package com.proyecto.backend.controller;
+// package com.proyecto.backend.controller;
 
-public class PaletController {
-    //por hacer
+// public class PaletController {
+//     //por hacer
     
-}
+// }

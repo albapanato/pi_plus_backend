@@ -1,5 +1,5 @@
-package com.proyecto.backend.service;
+// package com.proyecto.backend.service;
 
-public class PaletService {
-     //por hacer
-}
+// public class PaletService {
+//      //por hacer
+// }
