@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "Terminales", description = "API para gestión de Terminales")
 @RestController
-@RequestMapping("/terminales")
+@RequestMapping("/api")
 public class TerminalController {
 
     @Autowired
@@ -43,7 +43,7 @@ public class TerminalController {
         @ApiResponse(responseCode = "200", description = "Terminales obtenidos con éxito")
     })
     // ***************************************************************************    
-    @GetMapping("")
+    @GetMapping("/terminales")
     public ResponseEntity<List<Terminal>> showterminals() {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -60,7 +60,7 @@ public class TerminalController {
         @ApiResponse(responseCode = "404", description = "Terminal no encontrado", content = @Content())
     })
     // ***************************************************************************    
-    @GetMapping("/{id}")
+    @GetMapping("/terminales/{id}")
     public ResponseEntity<Terminal> detailsterminal(@PathVariable int id) {
         Terminal terminal = terminalService.findById(id);
 
@@ -84,7 +84,7 @@ public class TerminalController {
         @ApiResponse(responseCode = "200", description = "Terminales obtenidos con éxito")
     })
     // ***************************************************************************    
-    @GetMapping("/mayor/{id}")
+    @GetMapping("/terminales/mayor/{id}")
     public ResponseEntity<List<Terminal>> showTerminalesMayores(@PathVariable int id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -100,7 +100,7 @@ public class TerminalController {
         @ApiResponse(responseCode = "200", description = "Número de terminales obtenidos con éxito", content = @Content())
     })
     // ***************************************************************************    
-    @GetMapping("/count")
+    @GetMapping("/terminales/count")
     public ResponseEntity<Map<String, Object>> countTerminales() {
 
         ResponseEntity<Map<String, Object>> response = null;
@@ -131,7 +131,7 @@ public class TerminalController {
     })
     // ***************************************************************************    
 
-    @PostMapping("")
+    @PostMapping("/terminales")
     public ResponseEntity<Map<String, Object>> createTerminal(
             @Valid @RequestBody Terminal terminal) {
 
@@ -186,7 +186,7 @@ public class TerminalController {
         @ApiResponse(responseCode = "404", description = "Terminal no encontrado", content = @Content())
     })
     // ***************************************************************************    
-    @PutMapping("")
+    @PutMapping("/terminales")
     public ResponseEntity<Map<String, Object>> updateterminal(
             @Valid @RequestBody Terminal terminalUpdate) {
 
@@ -261,7 +261,7 @@ public class TerminalController {
         @ApiResponse(responseCode = "404", description = "Terminal no encontrado", content = @Content())
     })
     // ***************************************************************************    
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/terminales/{id}")
     public ResponseEntity<Map<String, Object>> deleteterminal(@PathVariable int id) {
 
         ResponseEntity<Map<String, Object>> response;

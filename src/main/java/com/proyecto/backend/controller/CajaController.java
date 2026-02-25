@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "cajas", description = "API para gestión de cajas")
 @RestController
-@RequestMapping("/cajas")
+@RequestMapping("/api")
 public class CajaController {
 
     @Autowired
@@ -43,7 +43,7 @@ public class CajaController {
         @ApiResponse(responseCode = "200", description = "Cajas obtenidos con éxito")
     })
     // ***************************************************************************    
-    @GetMapping("")
+    @GetMapping("/cajas")
     public ResponseEntity<List<Caja>> showCajas() {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -60,7 +60,7 @@ public class CajaController {
         @ApiResponse(responseCode = "404", description = "Caja no encontrado", content = @Content())
     })
     // ***************************************************************************    
-    @GetMapping("/{id}")
+    @GetMapping("/cajas/{id}")
     public ResponseEntity<Caja> detailsCaja(@PathVariable int id) {
         Caja caja = cajaService.findById(id);
 
@@ -84,7 +84,7 @@ public class CajaController {
         @ApiResponse(responseCode = "200", description = "Cajas obtenidos con éxito")
     })
     // ***************************************************************************    
-    @GetMapping("/mayor/{id}")
+    @GetMapping("/cajas/mayor/{id}")
     public ResponseEntity<List<Caja>> showCajasMayores(@PathVariable int id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -100,7 +100,7 @@ public class CajaController {
         @ApiResponse(responseCode = "200", description = "Número de cajas obtenidos con éxito", content = @Content())
     })
     // ***************************************************************************    
-    @GetMapping("/count")
+    @GetMapping("/cajas/count")
     public ResponseEntity<Map<String, Object>> countCajas() {
 
         ResponseEntity<Map<String, Object>> response = null;
@@ -131,7 +131,7 @@ public class CajaController {
     })
     // ***************************************************************************    
 
-    @PostMapping("")
+    @PostMapping("/cajas")
     public ResponseEntity<Map<String, Object>> createCaja(
             @Valid @RequestBody Caja caja) {
 
@@ -186,7 +186,7 @@ public class CajaController {
         @ApiResponse(responseCode = "404", description = "Caja no encontrado", content = @Content())
     })
     // ***************************************************************************    
-    @PutMapping("")
+    @PutMapping("/cajas")
     public ResponseEntity<Map<String, Object>> updateProd(
             @Valid @RequestBody Caja caja) {
 
@@ -243,7 +243,7 @@ public class CajaController {
         @ApiResponse(responseCode = "404", description = "Caja no encontrado", content = @Content())
     })
     // ***************************************************************************    
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/cajas/{id}")
     public ResponseEntity<Map<String, Object>> deleteProd(@PathVariable int id) {
 
         ResponseEntity<Map<String, Object>> response;
